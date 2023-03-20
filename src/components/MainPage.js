@@ -59,7 +59,7 @@ const MainPage = () => {
         <div className="w-[100vw] h-[100vh] bg-slate-900 flex-col justify-center items-center flex ">
             <div>
                 <div className="flex justify-center">
-                    <h1 className="text-white">Youtube <span className="text-red-600">Search</span></h1>
+                    <h1 className="text-white">You<span className="text-red-600">tube</span> Search</h1>
                 </div>
 
                 <form onSubmit={test}>
