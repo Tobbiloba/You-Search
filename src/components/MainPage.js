@@ -59,11 +59,11 @@ const MainPage = () => {
         <div className="w-[100vw] h-[100vh] bg-slate-900 flex-col justify-center items-center flex ">
             <div>
                 <div className="flex justify-center">
-                    <h1 className="text-white">You<span className="text-red-600">tube</span> Search</h1>
+                    <h1 className="text-white">You<span className="text-red-600">Search</span></h1>
                 </div>
 
                 <form onSubmit={test}>
-                    <div className="w-fit ">
+                    <div className="w-fit rounded-lg">
                         <input className="h-10 rounded-l-lg pl-4 w-[40vw]" type="text" name="id" onChange={updateInput} />
                         <button className="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded-r-lg">Search</button>
                     </div>
