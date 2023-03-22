@@ -10,6 +10,7 @@ const MainPage = () => {
     // const [input, setInput] = useState('');
     // const [output, setOutput] = useState([]);
     const [apiData, setApiData] = useState([]);
+    const [border, setBorder] = useState(false);
 
     const [post, setPost] = useState(null);
     let myObject;
@@ -41,12 +42,17 @@ const MainPage = () => {
         const data = await response.json();
         let filtered = data.items.filter((item) => item.bestThumbnail)
         setApiData(filtered);
+        setBorder(true)
         console.log(filtered)
 
     };
 
     const updateInput = (event) => {
         setSearch(event.target.value)
+
+        if (event.target.value.length === 0) {
+            setBorder(false)
+        }
     }
 
     const test = (e) => {
@@ -78,7 +84,7 @@ const MainPage = () => {
                     </div>
                 </form>
             </div>
-            <div>
+            {border && <div>
 
                 <div className="w-[94vw] h-[70vh] border overflow-y-scroll">
                     {apiData?.map((item) => (
@@ -90,7 +96,7 @@ const MainPage = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div>}
         </div>
     )
 }
