@@ -39,9 +39,10 @@ const MainPage = () => {
     const getData = async () => {
         const response = await fetch(`https://youtube-search-results.p.rapidapi.com/youtube-search/?q=${search}`, options);
         const data = await response.json();
-        setApiData(data.items);
-        console.log(data.items)
-        // console.log(apiData)
+        let filtered = data.items.filter((item) => item.bestThumbnail)
+        setApiData(filtered);
+        console.log(filtered)
+
     };
 
     const updateInput = (event) => {
@@ -58,10 +59,13 @@ const MainPage = () => {
 
     }
 
+    // console.log(apiData)
+
+
 
     return (
 
-        <div className="w-[100vw] h-[100vh] bg-slate-900 flex-col justify-center items-center flex ">
+        <div className="w-[100vw] bg-slate-900 flex-col justify-center items-center flex ">
             <div>
                 <div className="flex justify-center mb-4">
                     <h1 className="text-white text-3xl">You<span className="text-red-600">Search</span></h1>
@@ -73,11 +77,15 @@ const MainPage = () => {
                         <button className="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded-r-lg">Search</button>
                     </div>
                 </form>
+            </div>
+            <div>
+
                 <div>
                     {apiData?.map((item) => (
-                        <div>
-                            <p>{item.name ? item.name : item.title}</p>
-                            {/* <img src={item?.bestThumbnail.url} alt={item.title} /> */}
+                        <div key={item.title}>
+                            <img src={item.bestThumbnail.url} alt={item.title} />
+                            <p className="text-white">{item.name ? item.name : item.title}</p>
+
                             {/* <p>{item?.author.avatars.url}</p> */}
                         </div>
                     ))}
