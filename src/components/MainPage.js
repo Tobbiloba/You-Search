@@ -65,8 +65,8 @@ const MainPage = () => {
 
     return (
 
-        <div className="w-[100vw] bg-slate-900 flex-col justify-center items-center flex ">
-            <div>
+        <div className="w-[100vw] h-[100vh] bg-slate-900 flex-col justify-center items-center flex ">
+            <div className="mb-6">
                 <div className="flex justify-center mb-4">
                     <h1 className="text-white text-3xl">You<span className="text-red-600">Search</span></h1>
                 </div>
@@ -80,7 +80,7 @@ const MainPage = () => {
             </div>
             <div>
 
-                <div>
+                <div className="w-[94vw] h-[70vh] border overflow-y-scroll">
                     {apiData?.map((item) => (
                         <div key={item.title}>
                             <img src={item.bestThumbnail.url} alt={item.title} />
