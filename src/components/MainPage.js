@@ -16,7 +16,29 @@ const MainPage = () => {
     const [post, setPost] = useState(null);
     let myObject;
 
+    const steps = [
+        {
+            id: 1,
+            instruction: 'Input the name of the name of the youtuber or video you are searching for.'
+        },
+        {
+            id: 2,
+            instruction: 'Click the enter button.'
+        },
+        {
+            id: 3,
+            instruction: 'Wait for it to load.'
+        },
+        {
+            id: 4,
+            instruction: 'Click on the name under the video to be redirected to the video on youtube.'
+        },
+    ]
 
+    //     <p>1.  Input the name of the name of the youtuber or video you are searching for</p>
+    // <p>2: Click the enter button</p>
+    // <p>3: Wait for it to load</p>
+    // <p>4: Click on the name under the video to be redirected to the video on youtube</p>
     const options = {
         method: 'GET',
         headers: {
@@ -86,9 +108,19 @@ const MainPage = () => {
                     </div>
                 </form>
             </div>
-            <div className="border w-[94vw] lg:w-[60vw] h-[70vh] ">
 
-            </div>
+            {!border && <div className="border w-[80vw] lg:w-[60vw] h-[70vh] flex flex-col items-center pt-8">
+                <h1 className="text-white text-3xl mb-12">How to use You<span className="text-red-600">Search</span>:</h1>
+                <div className="text-white w-[80vw] lg:w-[60vw] h-[40vh] px-8">
+                    {steps.map((items) => (
+                        <div key={items.id} className="flex flex-row mb-4">
+                            <p className="mr-4">{items.id}:</p>
+                            <p>{items.instruction}</p>
+                        </div>
+                    ))}
+
+                </div>
+            </div>}
             {border && <div>
 
                 <div className="w-[94vw] lg:w-[60vw] h-[70vh] overflow-y-scroll">
