@@ -106,8 +106,8 @@ const MainPage = () => {
                         <div key={item.title} className="mb-12">
                             <img src={item.bestThumbnail.url} alt={item.title} className="w-[94vw] lg:w-[60vw] mb-4" />
 
-                            <div className="flex justify-center">
-                                <a href={item.url} target="_blank" className="text-white hover:text-gray-500">{item.name ? item.name : item.title}</a>
+                            <div className="flex justify-center items-center">
+                                <a href={item.url} target="_blank" className="text-white hover:text-gray-500 text-center w-[94vw] lg:w-[60vw]">{item.name ? item.name : item.title}</a>
                             </div>
                             <div className="pl-4 grid grid-rows-2 grid-flow-col gap-4 text-white mt-4">
                                 <p>Views: <span className="ml-3 text-gray-500">{item.views}</span></p>
