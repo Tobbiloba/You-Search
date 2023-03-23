@@ -1,6 +1,7 @@
 // import logo from '../svg/logo-no-background.svg';
 
 import { useEffect, useState } from "react";
+import CancelIcon from '@mui/icons-material/Cancel';
 
 
 
@@ -52,6 +53,7 @@ const MainPage = () => {
 
         if (event.target.value.length === 0) {
             setBorder(false)
+            setApiData('');
         }
     }
 
@@ -72,7 +74,7 @@ const MainPage = () => {
     return (
 
         <div className="w-[100vw] h-[100vh] bg-slate-900 flex-col justify-center items-center flex ">
-            <div className="mb-6">
+            <div className="mb-8">
                 <div className="flex justify-center mb-4">
                     <h1 className="text-white text-3xl">You<span className="text-red-600">Search</span></h1>
                 </div>
@@ -84,15 +86,17 @@ const MainPage = () => {
                     </div>
                 </form>
             </div>
+            <div className="border w-[94vw] lg:w-[60vw] h-[70vh] ">
+
+            </div>
             {border && <div>
 
-                <div className="w-[94vw] h-[70vh] border overflow-y-scroll">
+                <div className="w-[94vw] lg:w-[60vw] h-[70vh] overflow-y-scroll">
                     {apiData?.map((item) => (
                         <div key={item.title}>
-                            <img src={item.bestThumbnail.url} alt={item.title} />
-                            <p className="text-white">{item.name ? item.name : item.title}</p>
+                            <img src={item.bestThumbnail.url} alt={item.title} className="w-[94vw] lg:w-[60vw]" />
+                            <a href={item.url} target="_blank" className="text-white">{item.name ? item.name : item.title}</a>
 
-                            {/* <p>{item?.author.avatars.url}</p> */}
                         </div>
                     ))}
                 </div>
