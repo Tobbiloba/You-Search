@@ -100,12 +100,20 @@ const MainPage = () => {
             </div>}
             {border && <div>
 
-                <div className="w-[94vw] lg:w-[60vw] h-[80vh] overflow-y-scroll">
+                <div className="w-[94vw] border border-y-red-500 lg:w-[60vw] h-[80vh] overflow-y-scroll">
                     {apiData?.map((item) => (
-                        <div key={item.title}>
-                            <img src={item.bestThumbnail.url} alt={item.title} className="w-[94vw] lg:w-[60vw]" />
-                            <a href={item.url} target="_blank" className="text-white hover:text-grey-500">{item.name ? item.name : item.title}</a>
+                        <div key={item.title} className="mb-12">
+                            <img src={item.bestThumbnail.url} alt={item.title} className="w-[94vw] lg:w-[60vw] mb-4" />
 
+                            <div className="flex justify-center">
+                                <a href={item.url} target="_blank" className="text-white hover:text-gray-500">{item.name ? item.name : item.title}</a>
+                            </div>
+                            <div className="pl-4 grid grid-rows-2 grid-flow-col gap-4 text-white mt-4">
+                                <p>Views: <span className="ml-3 text-gray-500">{item.views}</span></p>
+                                <p>Time of upload: <span className="ml-3 text-gray-500">{item.uploadedAt}</span></p>
+                                <p>Duration: <span className="ml-3 text-gray-500">{item.duration}</span></p>
+                                {/* <p>Live: {item.isLive === "false" ? <span>False</span> : <span>False</span>}</p> */}
+                            </div>
                         </div>
                     ))}
                 </div>
