@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import CancelIcon from '@mui/icons-material/Cancel';
+// import CancelIcon from '@mui/icons-material/Cancel';
+import VerifiedIcon from '@mui/icons-material/Verified';
 
 
 
@@ -112,6 +113,7 @@ const MainPage = () => {
                                 <p>Views: <span className="ml-3 text-gray-500">{item.views}</span></p>
                                 <p>Time of upload: <span className="ml-3 text-gray-500">{item.uploadedAt}</span></p>
                                 <p>Duration: <span className="ml-3 text-gray-500">{item.duration}</span></p>
+                                {/* <div>{item.author.verified == 'false' ? <VerifiedIcon /> : <p>Not verified</p>}</div> */}
                                 {/* <p>Live: {item.isLive === "false" ? <span>False</span> : <span>False</span>}</p> */}
                             </div>
                         </div>
