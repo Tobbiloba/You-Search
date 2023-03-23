@@ -89,7 +89,7 @@ const MainPage = () => {
 
             {!border && <div className="border w-[80vw] lg:w-[60vw] h-[35vh] flex flex-col items-center pt-8">
                 <h1 className="text-white text-3xl mb-12">How to use You<span className="text-red-600">Search</span>:</h1>
-                <div className="text-white w-[80vw] lg:w-[60vw] h-[40vh] px-8">
+                <div className="text-white w-[80vw] lg:w-[60vw] h-[60vh] px-8">
                     {steps.map((items) => (
                         <div key={items.id} className="flex flex-row mb-4">
                             <p className="mr-4">{items.id}:</p>
