@@ -150,7 +150,7 @@ const MainPage = () => {
 
             {border && <div>
 
-                <div className="w-[94vw] border-4 border-slate-800 border-t-red-500 border-b-red-500 lg:w-[60vw] h-[80vh] overflow-y-scroll">
+                <div className="w-[94vw] border-4 border-slate-800 border-t-white border-b-red-500 lg:w-[60vw] h-[80vh] overflow-y-scroll ">
 
 
 
