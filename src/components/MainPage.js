@@ -51,6 +51,7 @@ const MainPage = () => {
         const data = await response.json();
 
         let filtered = data.items.filter((item) => item.bestThumbnail)
+        console.log(filtered)
         setApiData(filtered);
 
 
@@ -150,7 +151,7 @@ const MainPage = () => {
 
             {border && <div>
 
-                <div className="w-[94vw] border-4 border-slate-800 border-t-white border-b-red-500 lg:w-[60vw] h-[80vh] overflow-y-scroll ">
+                <div className="w-[94vw] border-4 border-slate-800 border-t-slate-500 border-b-slate-500 lg:w-[60vw] h-[80vh] overflow-y-scroll ">
 
 
 
@@ -161,9 +162,10 @@ const MainPage = () => {
                                 <img src={item.bestThumbnail.url} alt={item.title} className="w-[94vw] lg:w-[60vw] mb-8" />
 
                                 <div className="flex justify-center items-center">
-                                    <a href={item.url} target="_blank" className="text-white hover:text-gray-500 text-center w-[94vw] lg:w-[60vw]">{item.name ? item.name : item.title}</a>
+                                    <a href={item.url} target="_blank" className="text-white hover:text-gray-500 text-center">{item.name ? item.name : item.title}</a>
                                 </div>
                                 <div className="pl-8 grid grid-rows-2 grid-flow-col gap-4 text-white mt-8">
+                                    <p className="text-red-500">Youtube Account: <span className="ml-3 text-white">{item.author.name}</span></p>
                                     <p className="text-red-500">Views: <span className="ml-3 text-white">{item.views}</span></p>
                                     <p className="text-red-500">Time of upload: <span className="ml-3 text-white">{item.uploadedAt}</span></p>
                                     <p className="text-red-500">Duration: <span className="ml-3 text-white">{item.duration}</span></p>
