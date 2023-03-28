@@ -51,7 +51,13 @@ const MainPage = () => {
         const data = await response.json();
 
         let filtered = data.items.filter((item) => item.bestThumbnail)
-        console.log(filtered)
+
+        // if (filtered.author.url)
+        // console.log(filtered[0].author.url);
+
+        // console.log(filtered)
+
+
         setApiData(filtered);
 
 
@@ -165,7 +171,9 @@ const MainPage = () => {
                                     <a href={item.url} target="_blank" className="text-white hover:text-gray-500 text-center">{item.name ? item.name : item.title}</a>
                                 </div>
                                 <div className="pl-8 grid grid-rows-2 grid-flow-col gap-4 text-white mt-8">
-                                    <p className="text-red-500">Youtube Account: <span className="ml-3 text-white">{item.author.name}</span></p>
+                                    {/* <p className="text-red-500">Youtube Account: <span className="ml-3 text-white">{item.author.name}</span></p> */}
+                                    {/* <p className="text-red-500">{item.author.url}</p> */}
+                                    <a href={item.author.url} target="_blank" className="text-red-500">Youtube: <span className="ml-3 text-white hover:text-slate-500">{item.author.name}</span></a>
                                     <p className="text-red-500">Views: <span className="ml-3 text-white">{item.views}</span></p>
                                     <p className="text-red-500">Time of upload: <span className="ml-3 text-white">{item.uploadedAt}</span></p>
                                     <p className="text-red-500">Duration: <span className="ml-3 text-white">{item.duration}</span></p>
